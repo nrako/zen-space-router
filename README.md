@@ -33,7 +33,7 @@ rules.
 
 ## Compatibility
 
-Initially validated with Zen Browser 1.21.16b on macOS Intel. It relies on
+Initially validated with Zen Browser 1.21.16b on macOS. It relies on
 internal Zen and Firefox APIs and may require updates when Zen changes them.
 
 ## Temporary installation

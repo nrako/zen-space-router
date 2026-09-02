@@ -1,6 +1,6 @@
 # Feasibility result
 
-Validated on 2026-09-02 with Zen Browser 1.21.16b on macOS Intel, using the
+Validated on 2026-09-02 with Zen Browser 1.21.16b on macOS, using the
 isolated `zen-space-router-lab` profile.
 
 ## Injection boundary
@@ -71,9 +71,8 @@ used.
 ## Remaining validation
 
 - The first manual use through macOS's external URL/application path succeeded
-  in the real three-display setup: MacBook display, LG display, and iPad
-  Sidecar extended display. Repeat the matrix systematically before treating
-  it as regression coverage.
+  in a three-display setup with two external displays. Repeat the matrix
+  systematically before treating it as regression coverage.
 - Test the remaining browser integration cases manually: multiple matching
   windows, minimized windows, background external opens, window closure during
   route resolution, and confirmation that private windows preserve native

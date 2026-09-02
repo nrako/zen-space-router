@@ -35,9 +35,7 @@ This makes the destination `URL -> Space -> matching window`, rather than
 ## Steps to reproduce
 
 1. On macOS, enable `Displays have separate Spaces`.
-2. Use three displays: the MacBook's built-in display and two external
-   displays. In the observed setup these were an LG display and an iPad used
-   through Sidecar in extended-display mode.
+2. Use three displays, including two external displays.
 3. Open two Zen windows on the two external displays.
 4. Show Space A in Window A and Space B in Window B.
 5. Add a Space Routing rule sending `youtube.com` to Space B.
@@ -70,8 +68,6 @@ maintain parallel URL rules.
 ## Environment
 
 - Zen Browser 1.21.16b
-- macOS Intel
-- MacBook Pro 2017
-- Built-in display, external LG display, and iPad Sidecar extended display
+- macOS
 
 No screenshots or video are provided.
