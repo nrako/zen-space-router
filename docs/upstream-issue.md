@@ -23,7 +23,8 @@ state, and macOS Spaces state.
 When a specific Space Routing rule resolves to a destination Space:
 
 1. Prefer an existing Zen window already displaying that Space.
-2. If several windows match, use the most recently active matching window.
+2. If several windows match, prefer a non-minimized matching window, then use
+   most-recent order within the eligible group.
 3. If no window matches, preserve the current behavior and switch the normal
    target window to the destination Space.
 4. Preserve the existing behavior for `Most recent Space`.

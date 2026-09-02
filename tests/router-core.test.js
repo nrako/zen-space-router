@@ -61,11 +61,13 @@ test("keeps the source window when no window displays the target Space", () => {
 test("ignores closed and non-browser matching windows", () => {
   const sourceWindow = fakeWindow("main");
   const closedWindow = fakeWindow("videos", { closed: true });
-  const popup = fakeWindow("videos", { browserDOMWindow: null });
+  const nonBrowserWindow = fakeWindow("videos", {
+    browserDOMWindow: null,
+  });
 
   assert.equal(
     selectTargetWindow(
-      [closedWindow, popup, sourceWindow],
+      [closedWindow, nonBrowserWindow, sourceWindow],
       sourceWindow,
       "videos"
     ),

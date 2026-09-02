@@ -14,12 +14,15 @@ several windows across multiple displays.
 For external URLs only:
 
 1. Ask Zen's native Space Routing manager for the destination Space.
-2. Prefer the most recently active browser window already displaying it.
+2. Prefer the first eligible window already displaying it in Firefox's window
+   order: non-minimized windows first, then minimized windows, with most recent
+   first inside each group.
 3. If no window matches, preserve Zen's existing behavior.
 4. Preserve existing behavior for the `Most recent Space` destination.
 
 The extension chooses the destination before the tab is created. It does not
 move tabs afterward and does not maintain separate routing rules.
+Private windows always preserve Zen's native behavior.
 
 ## Compatibility
 
@@ -123,7 +126,8 @@ underlying Zen behavior.
 
 The extension executes with browser-level privileges. Inspect the source before
 installing it. It does not collect data, make network requests, or log and
-persist routed URLs.
+persist routed URLs. It declares private browsing unsupported and also enforces
+that boundary inside the global browser hook.
 
 Zen Space Router is independent and is not affiliated with Zen Browser or
 Mozilla.

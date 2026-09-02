@@ -74,6 +74,7 @@ used.
   in the real three-display setup: MacBook display, LG display, and iPad
   Sidecar extended display. Repeat the matrix systematically before treating
   it as regression coverage.
-- Test multiple windows displaying the same target Space, minimized windows,
-  private windows, background external opens, and window closure during route
-  resolution.
+- Test the remaining browser integration cases manually: multiple matching
+  windows, minimized windows, background external opens, window closure during
+  route resolution, and confirmation that private windows preserve native
+  behavior.

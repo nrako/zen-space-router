@@ -18,6 +18,9 @@ const result = spawnSync("zip", ["-q", "-r", xpiPath, "."], {
   cwd: buildRoot,
   stdio: "inherit",
 });
+if (result.error) {
+  throw result.error;
+}
 if (result.status !== 0) {
   throw new Error(`zip failed with status ${result.status}`);
 }
