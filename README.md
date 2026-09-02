@@ -41,22 +41,54 @@ The extension disappears when Zen exits. Reset
 ## Persistent installation
 
 Persistent installation is possible, but it weakens extension security for the
-entire Zen profile:
+entire Zen profile. This project does not distribute a prebuilt XPI: inspect
+the source and build the file locally before installing it.
 
-1. Build the XPI with `npm run build`.
-2. In `about:config`, set:
+1. Clone the repository and enter it:
+
+   ```sh
+   git clone https://github.com/nrako/zen-space-router.git
+   cd zen-space-router
+   ```
+
+2. Test the source and build the XPI:
+
+   ```sh
+   npm test
+   npm run build
+   ```
+
+   The generated file is `dist/zen-space-router.xpi`. The `dist/`
+   directory is ignored by Git.
+
+3. In Zen, open `about:config` and set:
 
    ```text
    extensions.experiments.enabled = true
    xpinstall.signatures.required = false
    ```
 
-3. Open `about:addons`, use the gear menu, and choose
-   **Install Add-on From File**.
-4. Select `dist/zen-space-router.xpi`.
+4. Open `about:addons`.
+5. Select **Extensions**, open the gear menu, then choose
+   **Install Add-on From File…**.
+6. Select the locally generated `dist/zen-space-router.xpi` and confirm the
+   installation.
+7. Verify that **Zen Space Router (Experimental)** appears and is enabled.
+8. Restart Zen once and open another external link to confirm that the
+   persistent installation loads correctly.
 
 Keep both preferences in place while the unsigned privileged extension is
-installed. To undo the change, remove the extension and reset both preferences.
+installed.
+
+To update it, pull the source, run the tests and build again, then install the
+new XPI through the same `about:addons` menu.
+
+To uninstall it:
+
+1. Remove **Zen Space Router (Experimental)** from `about:addons`.
+2. Open `about:config`.
+3. Reset `extensions.experiments.enabled` and
+   `xpinstall.signatures.required` to their defaults.
 
 Mozilla's ordinary AMO signing service cannot sign out-of-tree privileged
 extensions that define `experiment_apis`. A normally signed release therefore
