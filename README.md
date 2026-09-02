@@ -126,8 +126,9 @@ The build produces `dist/zen-space-router.xpi` using the system `zip`
 command. The project has no package dependencies.
 
 See [the feasibility record](docs/feasibility.md) for the validated browser
-boundary and [the prepared upstream issue](docs/upstream-issue.md) for the
-underlying Zen behavior.
+boundary and [Zen issue #15209](https://github.com/zen-browser/desktop/issues/15209)
+for the upstream report. Its technical context is mirrored in
+[docs/upstream-issue.md](docs/upstream-issue.md).
 
 ## Security and privacy
 

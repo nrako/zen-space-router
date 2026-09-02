@@ -1,5 +1,8 @@
 # Space Routing should target the window already displaying the destination Space
 
+Upstream issue:
+[zen-browser/desktop#15209](https://github.com/zen-browser/desktop/issues/15209)
+
 ## Problem
 
 Space Routing resolves a URL to a destination Space, but with multiple Zen
@@ -35,17 +38,21 @@ This makes the destination `URL -> Space -> matching window`, rather than
 ## Steps to reproduce
 
 1. On macOS, enable `Displays have separate Spaces`.
-2. Use three displays, including two external displays.
-3. Open two Zen windows on the two external displays.
-4. Show Space A in Window A and Space B in Window B.
-5. Add a Space Routing rule sending `youtube.com` to Space B.
-6. Focus Window A and open a YouTube link from another application.
+2. Use at least two displays and open one Zen window on each.
+3. Show Space A in Window A and Space B in Window B.
+4. Add a Space Routing rule sending `youtube.com` to Space B, and set the
+   default external route to Space A.
+5. Focus Window A and open a YouTube link from another application.
+6. Focus Window B and open a non-YouTube link from another application.
 7. Repeat after changing focus, fullscreen state, or display placement.
 
-The issue was much less readily observable when the interaction involved only
-the built-in display and one secondary display. The inconsistent selection was
-most apparent with two external displays active, so reducing the setup to one
-external monitor may not reproduce the same behavior reliably.
+The issue was most consistently observable with three displays, including two
+external displays, but that may not be a strict requirement.
+
+For testing without several physical displays, a virtual display created with
+[DeskPad](https://github.com/Stengo/DeskPad) may help reproduce the
+multi-display window-selection path, although this has not been verified as
+identical to a physical display.
 
 ## Technical observation
 
