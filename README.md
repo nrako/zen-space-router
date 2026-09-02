@@ -11,18 +11,25 @@ several windows across multiple displays.
 
 ## Behavior
 
-For external URLs only:
+```mermaid
+flowchart TD
+    A[External URL] --> B[Zen resolves the destination Space]
+    B --> C{Usable window already displays that Space?}
+    C -->|Yes| D[Open through Firefox's native method in that window]
+    C -->|No| E[Preserve Zen's native behavior]
+```
 
-1. Ask Zen's native Space Routing manager for the destination Space.
-2. Prefer the first eligible window already displaying it in Firefox's window
-   order: non-minimized windows first, then minimized windows, with most recent
-   first inside each group.
-3. If no window matches, preserve Zen's existing behavior.
-4. Preserve existing behavior for the `Most recent Space` destination.
+Zen remains the source of truth for URL rules and the destination Space. The
+extension only chooses the first eligible window displaying that Space in
+Firefox's window order, before the tab is created.
 
-The extension chooses the destination before the tab is created. It does not
-move tabs afterward and does not maintain separate routing rules.
-Private windows always preserve Zen's native behavior.
+A candidate must be an open browser window with Zen Workspaces enabled.
+Closed and non-browser windows are ignored. Native behavior is preserved for
+`Most recent Space`, private browsing, missing matches, and invalid input.
+
+The extension focuses the selected window, but does not move tabs, position
+windows, restore sessions, manage displays, or maintain separate routing
+rules.
 
 ## Compatibility
 
@@ -126,8 +133,7 @@ underlying Zen behavior.
 
 The extension executes with browser-level privileges. Inspect the source before
 installing it. It does not collect data, make network requests, or log and
-persist routed URLs. It declares private browsing unsupported and also enforces
-that boundary inside the global browser hook.
+persist routed URLs. It declares private browsing unsupported.
 
 Zen Space Router is independent and is not affiliated with Zen Browser or
 Mozilla.
