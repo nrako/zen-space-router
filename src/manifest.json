@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Zen Space Router (Experimental)",
+  "version": "0.1.0",
+  "description": "Routes external links to the Zen window already displaying the Space selected by native Space Routing.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "zen-space-router@nrako.local",
+      "strict_min_version": "128.0"
+    }
+  },
+  "experiment_apis": {
+    "zenSpaceRouter": {
+      "schema": "experiment/schema.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "paths": [["zenSpaceRouter"]],
+        "script": "experiment/api.js"
+      }
+    }
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  }
+}

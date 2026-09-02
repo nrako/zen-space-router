@@ -1,0 +1,11 @@
+{
+  "name": "zen-space-router",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Experimental privileged Zen Browser extension for routing external links to the window already displaying their target Space.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.js"
+  }
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "namespace": "zenSpaceRouter",
+    "description": "Privileged bridge for external-link window routing in Zen Browser.",
+    "functions": [
+      {
+        "name": "start",
+        "type": "function",
+        "async": true,
+        "parameters": []
+      }
+    ]
+  }
+]
